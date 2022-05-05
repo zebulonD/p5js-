@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(200, 50);
 }
 
 function draw() {
@@ -10,16 +10,36 @@ function draw() {
   s=50
   h=width/s
   l=height/s
-  square(x,y,s)
   
-  for(let i = 0;i<h;i++){
+  if (l<h){
+    
     for(let i = 0;i<l;i++){
-      let c = color(random(0,255), random(0,255), random(0,255));
-      fill(c);
-      square(x,y,s)
-      x+=s
+      for(let i = 0;i<h;i++){
+        let c = color(random(0,255), random(0,255), random(0,255));
+        fill(c);
+        square(x,y,s)
+        x+=s
+      }
+      y+=s
+      x=0
     }
-    y+=s
-    x=0
   }
+  else{
+     
+    
+    for(let i = 0;i<l;i++){
+      for(let i = 0;i<h;i++){
+        let c = color(random(0,255), random(0,255), random(0,255));
+        fill(c);
+        square(x,y,s)
+        x+=s
+      }
+      y+=s
+      x=0
+    }
+    
+  }
+  
+  
+  
 }
